@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-B</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-b. Convert all the strings to title caps in a string array 
+        //==============================================================================
+
+        str_arr = ["alpha", "beta", "gamma", "delta"];
+        console.log("\n1-b. Title Caps of [" + str_arr + "]");
+
+        //__________Anonymous function__________
+        var q1_b = function (arr) {
+            title_caps = [];
+            for (var element of arr) {
+                title_caps.push(element.charAt(0).toUpperCase() + element.slice(1))
+            }
+            return (title_caps);
+        };
+        console.log(q1_b(str_arr));
+
+        //__________IIFE function__________
+        var iife_result = (function (arr) {
+            var title_caps = [];
+            for (var element of arr) {
+                title_caps.push(element.charAt(0).toUpperCase() + element.slice(1))
+            }
+            return (title_caps);
+        }
+        )(str_arr);
+        console.log(iife_result);
+    </script>
+</body>
+
+</html>

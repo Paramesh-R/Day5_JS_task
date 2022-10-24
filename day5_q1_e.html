@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-E</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-e. Return all the palindromes in an array 
+        //==============================================================================
+
+
+        var palin_arr = [121, 232, 123, 321, 45654, 2222, 5764]
+        console.log("\n1-e. Palindromes in array. [" + palin_arr + "]");
+
+        //__________Anonymous function__________
+        
+        let anonymous_palindrome = function (arr) {
+            result = [];
+            for (var element of arr) {
+                if (element.toString() == element.toString().split("").reverse().join("")) {
+                    result.push(element);
+                }
+            }
+            return (result);
+        }
+        console.log(anonymous_palindrome(palin_arr));
+
+        //__________IIFE function__________
+        var iife_palindrome = (function (arr) {
+            var Palindrome_Array = [];
+            for (let element of arr) {
+                if (element.toString() == element.toString().split('').reverse().join('')) {
+                    Palindrome_Array.push(element);
+                }
+            }
+            return (Palindrome_Array)
+        })(palin_arr);
+
+        console.log(iife_palindrome);
+
+
+    </script>
+</body>
+
+</html>

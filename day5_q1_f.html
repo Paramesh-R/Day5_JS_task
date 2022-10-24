@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-F</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-f. Return median of two sorted arrays of the same size.
+        //==============================================================================
+
+        console.log("\n1-f. Median of two sorted Array.");
+        var arr1 = [1, 12, 15, 26, 38];
+        var arr2 = [2, 13, 17, 30, 45];
+        console.log(arr1);
+        console.log(arr2);
+
+        //__________Anonymous function__________
+        let median = function (arr1, arr2) {
+            var concatenated_arr = arr1.concat(arr2);
+            concatenated_arr.sort(function (a, b) { return a - b });
+
+            //Since len of 2 arrays combined will be multiples of 2
+            var a = concatenated_arr[concatenated_arr.length / 2] - 1;
+            var b = concatenated_arr[concatenated_arr.length / 2];
+            return ((a + b) / 2);
+        };
+        console.log(median(arr1, arr2));
+
+        //__________IIFE function__________
+        (function (arr1, arr2) {
+            var concatenated_arr = arr1.concat(arr2);
+            concatenated_arr.sort(function (a, b) { return a - b });
+            //Since len of 2 arrays combined will be multiples of 2
+            var a = concatenated_arr[concatenated_arr.length / 2] - 1;
+            var b = concatenated_arr[concatenated_arr.length / 2];
+            console.log((a + b) / 2);
+        })(arr1, arr2);
+
+
+
+
+    </script>
+</body>
+
+</html>

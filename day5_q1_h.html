@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-H</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-h. Rotate an array by k times 
+        //==============================================================================
+        arr = [1, 2, 3, 4, 5, 6];
+        var k = 7;
+        console.log("\n1-h. Rotate array k times.");
+        console.log(arr);
+        console.log(`K is ${k}`);
+
+        //__________Anonymous function__________
+        var rotated_arr = function (arr, n) {
+            var arr_len = arr.length;
+            var k = n % arr.length;
+            return (arr.slice(k * -1).concat(arr.slice(0, k * -1)));
+        }
+        console.log(rotated_arr(arr, k));
+
+        //__________IIFE function__________
+        (function (arr, n) {
+            var arr_len = arr.length;
+            var k = n % arr.length;
+            console.log(arr.slice(k * -1).concat(arr.slice(0, k * -1)));
+        })(arr, k);
+
+    </script>
+</body>
+
+</html>

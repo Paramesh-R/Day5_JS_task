@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-D</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-d. Return all the prime numbers in an array
+        //==============================================================================
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log("\n1-d. Prime Numbers of ["+ arr + "]");
+            
+
+        //__________Anonymous function__________
+        let isPrime = function (element) {
+            if (element<=1) return false;
+            for (var i = 2; i <= Math.sqrt(element); i++) {
+                if (element % i === 0) return false;
+            }
+            return true;
+        }
+
+        primeArray = arr.filter(element => isPrime(element) == true)
+
+        console.log(primeArray);
+
+
+        
+        //__________IIFE function__________
+        (function (arr) {
+            var PrimeArray = [];
+           
+            for (let element of arr) {
+                let flag = true;
+                if (element<=1) flag= false;
+                for (let i = 2; i <= Math.sqrt(element); i++) {
+                    
+                    if (element % i === 0) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    PrimeArray.push(element);
+                }
+            }
+            console.log(PrimeArray)
+        })(arr);
+
+
+    </script>
+</body>
+
+</html>

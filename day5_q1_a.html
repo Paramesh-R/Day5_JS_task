@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-A</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-a. Print Odd numbers in an array (Anonymous Function)
+        //==============================================================================
+        
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(arr);
+        
+
+        //__________Anonymous function__________
+        
+        var q1_a_odds = function (arr) {
+            var odd_arr = [];
+            for (var element of arr) {
+                if ((element % 2) != 0) {
+                    odd_arr.push(element);
+                }
+            }
+            return (odd_arr);
+        };
+
+        console.log("Odd numbers using Anonymous function");
+        console.log(q1_a_odds(arr));
+
+        //__________IIFE function__________
+        
+        var iife_result = (function (arr) {
+            var odd_arr2 = [];
+            for (var element of arr) {
+                if ((element % 2) != 0) {
+                    odd_arr2.push(element);
+                }
+            }
+            return (odd_arr2);
+        }
+        )(arr);
+        console.log("Odd numbers using IIFE function");
+        console.log(iife_result);
+
+
+    </script>
+</body>
+
+</html>

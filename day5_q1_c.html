@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 Q1-C</title>
+</head>
+
+<body>
+    <script>
+        //==============================================================================
+        // 1-c. Sum of all numbers in an array  
+        //==============================================================================
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log("\n1-c. Sum of [" + arr + "]");
+
+        //__________Anonymous function__________
+        var q1_c = function (arr) {
+            console.log(arr.reduce((acc, element) => acc + element));
+            total = 0;
+            arr.forEach(element => {
+                total += element;
+            });
+            return (total)
+        };
+
+        q1_c(arr);
+
+        //__________IIFE function__________
+        arr_sum = (function (arr) {
+            total = 0;
+            for (var element of arr) {
+                total += element;
+            }
+
+            return (total);
+        })(arr);
+
+        console.log(arr_sum);
+
+    </script>
+</body>
+
+</html>
